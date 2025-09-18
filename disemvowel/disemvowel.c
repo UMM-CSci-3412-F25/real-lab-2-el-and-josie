@@ -33,6 +33,11 @@ char *disemvowel(char *str) {
   // string = tmp;
   strncpy(string, tmp, size + 1);
   free(tmp);
+  
+  if(size <= 0) {
+    free(string);
+    return (char*) "";
+  }
   return (char*) string;
 }
 

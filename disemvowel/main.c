@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
   while (getline(&line, &size, stdin) > 0) {
     answer = disemvowel(line);
     printf("%s\n", answer);
-    // free(answer);
+    free(answer);
   }
 
   free(line);
