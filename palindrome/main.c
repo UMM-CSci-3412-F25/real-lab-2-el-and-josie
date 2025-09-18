@@ -23,8 +23,8 @@ int main(int argc, char *argv[]) {
     line[strcspn(line, "\n")] = '\0';
     answer = palindrome(line);
     printf("Is the string <%s> a palindrome? %s\n", line, answer);
+    free(answer);
   }
 
-  free(answer);
   free(line);
 }
