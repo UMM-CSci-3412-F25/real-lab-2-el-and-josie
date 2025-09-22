@@ -20,7 +20,13 @@ char *disemvowel(char *str) {
   size_t size = 0;
   // Allocate memory for length of string
   // for length of string 
-  tmp = (char*) malloc (strlen(str) + 1);
+
+  if (str == NULL) {
+    return (char*)"";
+  }
+
+  tmp = (char*) calloc ((strlen(str) + 1), sizeof(char));
+
   for (size_t i = 0; i < strlen(str); i++) {
   // if is_vowel(string[i]), add to temp array
     if (!is_vowel(str[i])) {
@@ -29,16 +35,17 @@ char *disemvowel(char *str) {
     }
   }
 
-  string = (char*) malloc (size + 1);
+  string = (char*) calloc ((size + 1), sizeof(char));
   // string = tmp;
   strncpy(string, tmp, size + 1);
   free(tmp);
   
-  if(size <= 0) {
+  if (size <= 0) {
     free(string);
     return (char*) "";
   }
-  return (char*) string;
+
+  return string;
 }
 
 

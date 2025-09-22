@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
   size_t size;
   
   size = 100;
-  line = (char*) malloc (size + 1);
+  line = (char*) calloc ((size + 1), sizeof(char));
 
   while (getline(&line, &size, stdin) > 0) {
     answer = disemvowel(line);
