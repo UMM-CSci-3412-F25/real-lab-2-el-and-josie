@@ -19,6 +19,10 @@ char *str_reverse(char const *str) {
 }
 
 char *palindrome(char const *str) {
+  /* 
+  @Param str: char
+  @Returns char
+  */
   char *rev;
   int i;
   bool result = true;
@@ -32,7 +36,8 @@ char *palindrome(char const *str) {
     }
     ++i;
   }
-
+  free(rev);
+  
   if (result) {
     answer = (char*) calloc(4, sizeof(char));
     answer[0] = 'Y';

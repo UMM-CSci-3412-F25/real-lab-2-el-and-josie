@@ -5,12 +5,17 @@
 
 int main(int argc, char *argv[]) {
   char *line;
+  char *answer;
   size_t size;
   
   size = 100;
-  line = (char*) malloc (size + 1);
+  line = (char*) calloc ((size + 1), sizeof(char));
 
   while (getline(&line, &size, stdin) > 0) {
-    printf("%s\n", disemvowel(line));
+    answer = disemvowel(line);
+    printf("%s\n", answer);
+    free(answer);
   }
+
+  free(line);
 }
