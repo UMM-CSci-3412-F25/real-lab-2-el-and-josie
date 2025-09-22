@@ -19,6 +19,10 @@ char *str_reverse(char const *str) {
 }
 
 char *palindrome(char const *str) {
+  /* 
+  @Param str: char
+  @Returns char
+  */
   char *rev;
   int i;
   bool result = true;

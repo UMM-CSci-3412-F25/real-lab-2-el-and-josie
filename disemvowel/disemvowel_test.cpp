@@ -3,7 +3,16 @@
 #include "disemvowel.h"
 
 void compare_constants(char* test, const char* control) {
-  char const* result = disemvowel(test);
+  /*
+  @Param test: char
+  @Param control: char
+
+  Takes two strings, disemvowels the test string (test), 
+  then compares the result with a pre-stripped string (control)
+  with a test assertion.
+
+  */
+  char const* result = disemvowel(test); 
   ASSERT_STREQ(control, result);
 
   if(strcmp(result,"") != 0){
